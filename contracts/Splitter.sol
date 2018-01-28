@@ -6,6 +6,27 @@ contract Splitter is Ownable {
     address public carolAddress;
     uint aliceContribution;
 
+    function Splitter(address _bob, address _carol)
+    public
+    {
+        bobAddress = _bob;
+        carolAddress = _carol;
+    }
+
+    function setBobAddress(address _address)
+    external
+    onlyOwner
+    {
+        bobAddress = _address;
+    }
+
+    function setCarolAddress(address _address)
+    external
+    onlyOwner
+    {
+        carolAddress = _address;
+    }
+
     function splitFunds(uint _aliceContribution)
     public
     payable
@@ -27,6 +48,14 @@ contract Splitter is Ownable {
     returns(bool allPaid)
     {
         return (aliceContribution == this.balance);
+    }
+
+    function kill()
+    public
+    {
+        if (msg.sender == owner) {
+            selfdestruct(owner);
+        }
     }
 
 }

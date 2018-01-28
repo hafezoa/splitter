@@ -2,13 +2,15 @@ var Splitter = artifacts.require("./Splitter.sol");
 
 contract("Splitter contract", (accounts) => {
     let ownerAlice = accounts[0];
-    let Bob = accounts[2];
-    let Carol = accounts[3];
+    let _bob = accounts[1];
+    let _carol = accounts[2];
 
     beforeEach(() => {
-        return Splitter.new({ from: owner })
+        return Splitter.new(_bob, _carol, { from: owner })
             .then(instance => {
                 contract = instance;
+                bobAddress = _bob;
+                carolAddress = _carol;
             });
     });
 
