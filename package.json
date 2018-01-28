@@ -1,0 +1,22 @@
+{
+  "name": "splitter",
+  "version": "1.0.0",
+  "description": "Eth developer course Project 1",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hafezoa/splitter.git"
+  },
+  "author": "Omar Hafez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hafezoa/splitter/issues"
+  },
+  "homepage": "https://github.com/hafezoa/splitter#readme"
+}
